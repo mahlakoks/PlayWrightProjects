@@ -3,11 +3,14 @@ import { dot } from 'node:test/reporters';
 
 
 const config : PlaywrightTestConfig={
-  testMatch:["tests/Login.test.ts"],
+  testMatch:["tests/TestAlert.test.ts","tests/Login.test.ts","tests/SimpleForm.test.ts"],
   use:{
     headless:false,
-    screenshot:'only-on-failure',
+    screenshot:'on',
     video:'on',
+    launchOptions:{
+      slowMo:1000
+    }
   },
   reporter:[["dot"],["html",{open:"always"}]]
 };
