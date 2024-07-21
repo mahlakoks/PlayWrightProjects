@@ -1,6 +1,9 @@
 import test, { expect } from "@playwright/test"
 import exp from "constants";
-
+/*
+test.use({
+    browserName:"firefox"
+})*/
 test("Test input filed SampleForm",async({page})=>{
     await page.goto("https://www.lambdatest.com/selenium-playground/simple-form-demo");
     const messageInput= page.locator("//input[@id='user-message']");
