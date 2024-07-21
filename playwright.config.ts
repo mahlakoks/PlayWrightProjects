@@ -3,6 +3,21 @@ import { dot } from 'node:test/reporters';
 
 
 const config : PlaywrightTestConfig={
+  projects:[
+    {
+      name:"Edge",
+      use:{
+        ...devices["Desktop Edge"]
+      }
+    },
+    {
+      name:"firefox",
+      use:{
+        ...devices["Desktop Firefox"]
+      }
+    }
+  ],
+  workers: 4,
   testMatch:["tests/TestAlert.test.ts","tests/Login.test.ts","tests/SimpleForm.test.ts"],
   use:{
     headless:false,
